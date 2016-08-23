@@ -23,7 +23,10 @@ def print_line(message):
 def get_volume():
     now_volume = run_command(['amixer'])
     now_volume = str(now_volume.decode()).split('\n')[5][-10:].split('[')[1].replace('] ', '').replace('%', '')
-    now_volume = int(now_volume)
+    try:    
+        now_volume = int(now_volume)
+    except ValueError:
+        return ' '
 
     if now_volume in range(0, 20): now_volume = ' '
     if now_volume in range(20, 60): now_volume = ' '

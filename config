@@ -30,7 +30,10 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
+
+# start a gnome settings
+bindsym $mod+s exec gnome-control-center
 
 # kill focused window
 bindsym $mod+q kill
@@ -73,7 +76,7 @@ bindsym $mod+l exec i3lock -c 000000
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+shift+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -155,7 +158,7 @@ bar {
 }
 
 # Screen shots.
-bindsym --release $mod+x exec --no-startup-id import /home/true/Pictures/Scrots/latest-screenshot.png
+bindsym --release $mod+x exec --no-startup-id import /home/xenx/Pictures/latest-screenshot.png
 
 exec --no-startup-id nm-applet
 exec --no-startup-id chromium
@@ -176,7 +179,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Search google
-bindsym $mod+g exec --no-startup-id /home/true/.config/i3/utils/web-searcher.sh
+bindsym $mod+g exec --no-startup-id /home/xenx/.config/i3/utils/web-searcher.sh
 
 # Auto lock screen after 5 minutes
 exec --no-startup-id xautolock -time 5 -locker i3lock &
