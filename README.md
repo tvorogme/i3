@@ -1,6 +1,4 @@
-# My own i3 config file
-Features:
+My own i3 config file
+It is just awesome.
 
-1. Duckduckgo searcher
-
-2. Python status bar
+Install fontawesome firs.
