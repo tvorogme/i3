@@ -32,7 +32,7 @@ def get_volume():
     if now_volume in range(20, 60): now_volume = ' '
     if now_volume in range(60, 101): now_volume = ' '
 
-    return now_volume
+    return str(now_volume)
 
 def get_battery():
     battery = run_command(['acpi'])
@@ -43,10 +43,14 @@ def get_battery():
     if battery in range(20, 60): battery = ' '
     if battery in range(60, 80): battery = ' '
     if battery in range(80, 101): battery = ' '
+   
+    return str(battery)
 
-    return battery
+def get_time():
+    time = run_command(['date', '+%H:%M'])
+    return str(time.decode()).replace('\n', '') + " "
 
 if __name__ == '__main__':
     while True:
-        print_line(str(get_volume()) + '  ' + str(get_battery()))
+        print_line(str(get_time()) + ' | ' + get_volume() + ' | ' + get_battery())
         sleep(1)
